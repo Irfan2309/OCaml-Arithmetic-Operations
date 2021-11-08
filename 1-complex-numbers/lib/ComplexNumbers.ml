@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are
+   Irfanuddin Syed, H00389591       <--- confirm who you are
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting 
 
    You may assume variables and functions defined in earlier questions
@@ -24,8 +24,9 @@ type complex_number = int * int
 (* implementations *)
 
 (* addition of two complex integers *)
-let complex_add (x1, y1) (x2, y2) =
-  failwith "not implemented yet"
+
+(*For complex number addition we simply add the real parts and the complex parts of the number*)
+let complex_add (x1, y1) (x2, y2) = (x1 + x2, y1 + y2);;
 
 (* multiplication of two complex integers *)
 let complex_mult (x1, y1) (x2, y2) =

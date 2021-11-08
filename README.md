@@ -5,8 +5,7 @@ This is coursework and counts towards your final grade.
 
 The instructions are in `ocaml-coursework-sheet.pdf`.
 
-To test all seven coursework questions, run `dune runtest --profile
-release` within this directory.
+To test all seven coursework questions, run `dune runtest --profile release` within this directory.
 
 To test a particular question, change into the appropriate directory
 and then run `dune runtest --profile release`.
@@ -24,3 +23,4 @@ for some libraries, then upgrade your opam libraries:
 
     $ opam update
     $ opam upgrade
+    

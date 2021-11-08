@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are
+   Irfanuddin Syed, H00389591       <--- confirm who you are
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting 
 
    You may assume variables and functions defined in earlier questions
@@ -29,8 +29,7 @@ let complex_add_test1 _test_ctxt =
 
 (* write another unit test for complex_add *)
 let complex_add_test2 _test_ctxt =
-  (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal (0, 0) (complex_add (0, 0) (0, 0))
 
 (* write a unit test for complex_mult *)
 let complex_mult_test1 _test_ctxt =
