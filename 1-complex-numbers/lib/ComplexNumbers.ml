@@ -29,5 +29,7 @@ type complex_number = int * int
 let complex_add (x1, y1) (x2, y2) = (x1 + x2, y1 + y2);;
 
 (* multiplication of two complex integers *)
-let complex_mult (x1, y1) (x2, y2) =
-  failwith "not implemented yet"
+
+(*in complex numbers, for 2 numbers a + bj and c + dj; the multiplication takes place as follows *)
+(* product = (ac - bd) + (ad + bc)j *)
+let complex_mult (x1, y1) (x2, y2) = (((x1 * x2) - (y1 * y2)), ((x1 * y2) + (y1 * x2)));;
