@@ -38,17 +38,17 @@ let complex_mult_test1 _test_ctxt =
 (* write another unit test for complex_mult *)
 let complex_mult_test2 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal (0, 1) (complex_mult (1, 0) (0, 1))
 
 (* write another unit test for complex_mult *)
 let complex_mult_test3 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal (0, 0) (complex_mult (0, 0) (0, 0))
 
 (* write another unit test for complex_mult *)
 let complex_mult_test4 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal (15, 36) (complex_mult (3, 2) (9, 6))
 
 (* list of unit tests *)
 let unit_tests =
