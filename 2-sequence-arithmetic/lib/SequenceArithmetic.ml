@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are 
+   Irfanuddin Syed, H00389591       <--- confirm who you are 
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting
 
    You may assume variables and functions defined in earlier questions
@@ -27,14 +27,26 @@ type int_seq = int list
 
    seq_add [x1; ...; xn] [y1; ...; yn] = [x1 + y1; ...; xn + yn]
  *)
-let rec seq_add : int_seq -> int_seq -> int_seq =
-  fun xs ys ->
-  failwith "not implemented yet"
+ (*iniitially tests if one of the lists is empty, if it is returns an empty list.
+   then we add the top of both lists and recursively call the remaining lists
+  *)
+ let rec seq_add : int_seq -> int_seq -> int_seq =
+  fun xs ys -> match xs, ys with 
+  | _, [] -> []
+  | [], _ -> []
+  | x1 :: y1, x2 :: y2 -> (x1 + x2) :: (seq_add y1 y2);;
+
 
 (* pointwise multiplication:
 
    seq_mult [x1; ...; xn] [y1; ...; yn] = [x1 * y1; ...; xn * yn]
  *)
-let rec seq_mult : int_seq -> int_seq -> int_seq =
-  fun xs ys ->
-  failwith "not implemented yet"
+ (*iniitially tests if one of the lists is empty, if it is returns an empty list.
+   then we multiply the top of both lists and recursively call the remaining lists
+  *)
+ let rec seq_mult : int_seq -> int_seq -> int_seq =
+  fun xs ys -> match xs, ys with 
+  | _, [] -> [] 
+  | [], _ -> [] 
+  | x1 :: y1, x2 :: y2 -> (x1 * x2) :: (seq_mult y1 y2);;
+

@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are 
+   Irfanuddin Syed, H00389591       <--- confirm who you are 
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting
 
    You may assume variables and functions defined in earlier questions
@@ -33,32 +33,32 @@ let seq_add_test2 _test_ctxt =
 (* another test of seq_add on two non-empty lists *)
 let seq_add_test3 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [5; 10; 20] (seq_add [1; 2; 3] [4; 8; 17])
 
 (* another test of seq_add on two non-empty lists *)
 let seq_add_test4 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [-10; 10; 0] (seq_add [-5; 5; 0] [-5; 5; 0])
 
 (* test of seq_mult on two empty lists *)
 let seq_mult_test1 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [] (seq_mult [] [])
 
 (* test seq_mult on two non-empty lists *)
 let seq_mult_test2 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [10; 15; 20] (seq_mult [2; 3; 4] [5; 5; 5])
 
 (* test seq_mult on two non-empty lists *)
 let seq_mult_test3 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [4; 9; 16] (seq_mult [2; 3; 4] [2; 3; 4])
 
 (* test seq_mult on two non-empty lists *)
 let seq_mult_test4 _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal [0; 0; 0] (seq_mult [0; 0; 0] [5; 5; 5])
 
 (* list of unit tests *)
 let unit_tests =
@@ -140,7 +140,8 @@ let seq_mult_zeros =
               ~print:show_sequence
               (Gen.pair integer_sequence_gen zeros_gen))
     (* TODO *)
-    (fun (seq,zeros) -> false)
+    (fun (seq,zeros) -> 
+      sum (seq_mult seq zeros) = 0)
 
 (* list of all property tests *)
 let property_tests =
