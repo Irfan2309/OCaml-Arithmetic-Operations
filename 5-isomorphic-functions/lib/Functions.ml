@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are 
+   Irfanuddin Syed, H00389591       <--- confirm who you are 
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting
 
    You may assume variables and functions defined in earlier questions
@@ -19,11 +19,11 @@
    This coursework is live exam material so KEEP YOUR ANSWERS PRIVATE. *)
 
 (* implement the function *)
+(* Add the 2 values x and y *)
 let curry : (('a * 'b) -> 'c) -> 'a -> 'b -> 'c =
-  fun f x y ->
-  failwith "not implemented yet"
+  fun f x y -> f (x, y) ;;
 
 (* implement the function *)
+(* Return the function with the 1st and 2nd element of f *)
 let uncurry : ('a -> 'b -> 'c) -> ('a * 'b) -> 'c =
-  fun f p ->
-  failwith "not implemented yet"
+  fun f p -> f (fst p) (snd p);;
