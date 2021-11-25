@@ -65,6 +65,7 @@ let matrix_shape x = match x with
   | [] -> (0, 0)
   | [[]] -> (0, 1)
   | x :: rest -> length x, length rest + 1 ;;
+  
 
 (* matrix addition *)
 (* helper function to sequentially add the rows of the matrix *)
