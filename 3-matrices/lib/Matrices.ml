@@ -86,5 +86,26 @@ let rec matrix_add x y = match x, y with
 
 
 (* matrix multiplication *)
+
+(* Helper function for matrix multplication to transform the list for multiplication.
+  we use List library: List.map to map the elements of the list.
+                       List.mem is used to check whether the element is a member of the list or not
+                       List.hd to return the head element of the list
+                       List.tl to return the list without the head element*)
+let rec mapnum f list =
+  assert (list <> []);
+  if List.mem [] list then
+    []
+  else
+    f (List.map List.hd list) :: mapnum f (List.map List.tl list);;
+
+(*
+ we create a row which operates the helper function and transforms column
+ we map the lists and add them using left fold and addition accumulator *)
 let matrix_mult x y =
-  failwith "not implemented yet"
+  List.map
+    (fun row -> mapnum
+      (fun column -> List.fold_left (+) 0
+        (List.map2 ( * ) row column))
+      y)
+    x
