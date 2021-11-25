@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are 
+    Irfanuddin Syed, H00389591      <--- confirm who you are 
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting
 
    You may assume variables and functions defined in earlier questions
@@ -114,7 +114,7 @@ let matrix_four_rows_four_columns = [[1; 2; 3; 4]; [2; 3; 4; 5]; [3;4;5;6]; [1; 
 (* test for the correct shape of matrix_four_rows_four_columns *)
 let matrix_shape_four_rows_four_columns _test_ctxt =
   (* TODO *)
-  assert_failure "not implemented yet"
+  assert_equal (4,4) (matrix_shape matrix_four_rows_four_columns)
 
 (* test adding matrix_one_row_zero_columns to itself *)
 let matrix_add_empties _test_ctxt =

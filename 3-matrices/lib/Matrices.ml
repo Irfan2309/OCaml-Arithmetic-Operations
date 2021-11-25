@@ -1,6 +1,6 @@
 (* Coursework template
 
-   My Name here, My UserID          <--- confirm who you are 
+   Irfanuddin Syed, H00389591       <--- confirm who you are 
    F28PL Coursework 2, OCaml        <--- confirm what you're submitting
 
    You may assume variables and functions defined in earlier questions
@@ -38,17 +38,51 @@ let rec string_of_matrix m =
 
 (* test whether a list of lists of integers represents a matrix.  The
    length of each row should be equal.*)
-let is_matrix x =
-  failwith "not implemented yet"
+
+(* Need to write a helper function to calculate length of rows *)
+
+let rec length: 'a list -> int = 
+  fun xs -> match xs with
+  | [] -> 0
+  | (x :: rest) -> 1 + (length rest);;
+
+(* wrote rxcpetion caes for empty list and matrices 
+  checks if the top 2 rows are equal,if not returns false, else recursively checks the other rows *)
+let rec is_matrix x = match x with
+  | ([]) -> true
+  | ([[]]) -> true
+  | ([_]) -> true
+  | x :: x1 :: x2 -> if (length x != length x1)
+    then false
+    else is_matrix (x1 :: x2);;
 
 (* function matrixshape takes the matrix, and calculates the number of
    columns and rows *)
-let matrix_shape x =
-  failwith "not implemented yet"
+(*wrote exception cases for empty matrix and matrix with empty row
+    then returns length of rows and columns using helper function *)
+
+let matrix_shape x = match x with
+  | [] -> (0, 0)
+  | [[]] -> (0, 1)
+  | x :: rest -> length x, length rest + 1 ;;
 
 (* matrix addition *)
-let rec matrix_add x y =
-  failwith "not implemented yet"
+(* helper function to sequentially add the rows of the matrix *)
+let rec row_add : int_seq -> int_seq -> int_seq =
+  fun xs ys -> 
+  match xs, ys with 
+  | [], _ -> []
+  | _, [] -> []
+  | a :: rest, b :: rest1 -> (a + b) :: (row_add rest rest1)
+
+(* initially tests for empty matrices
+  then adds the top of the matrices using row_add and recursively calls the rest of itself *)
+
+let rec matrix_add x y = match x, y with
+  | [], [] -> []
+  | [[]], [[]] -> [[]]
+  | x :: x1, y :: y1 -> (row_add x y) :: (matrix_add x1 y1);;
+
 
 (* matrix multiplication *)
 let matrix_mult x y =
