@@ -33,8 +33,8 @@ let uncurry_test1 _test_ctxt =
   assert_equal 
     (uncurry
       (curry
-        (fun(x, y) -> x - y)) (4, 3)) 
-    1
+        (fun(x, y) -> x + y)) (4, 3)) 
+    7
 
 (* forall f, x, y. f x y == uncurry f (x,y) *)
 let curry_prop =
