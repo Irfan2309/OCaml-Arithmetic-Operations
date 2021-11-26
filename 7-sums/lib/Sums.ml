@@ -189,8 +189,8 @@ let compare_exps_sorted : exp -> exp -> bool =
 let rec fold : 'a -> (string -> 'a) -> ('a -> 'a -> 'a) -> exp -> 'a =
   fun zero var add ->
   function
-  | Zero       -> failwith "not implemented yet"
-  | Var x      -> failwith "not implemented yet"
+  | Zero       -> Zero
+  | Var x      -> Var x
   | Add (a, b) -> failwith "not implemented yet"
 
 (* Now use fold to concisely re-express eval, string_of_exp, flatten,
