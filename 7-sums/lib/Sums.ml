@@ -155,6 +155,7 @@ let rec merge_sort : 'a list -> 'a list =
         merge (merge_sort xs) (merge_sort ys)
         
         
+        
 (* since the hint for merge was given in the question, for sorting the 2 lists, also implement merge_sort (split is also required for this). The code fragments for these are provided in the ocaml exercises sheet.
  Finally follow the pattern for flatten and simply merge sort the lists using the helper functions *)
 let rec flatten_sorted : exp -> var_list =
