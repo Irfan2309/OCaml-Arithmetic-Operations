@@ -191,7 +191,7 @@ let rec fold : 'a -> (string -> 'a) -> ('a -> 'a -> 'a) -> exp -> 'a =
   function
   | Zero       -> Zero
   | Var x      -> Var x
-  | Add (a, b) -> failwith "not implemented yet"
+  | Add (a, b) -> add a b
 
 (* Now use fold to concisely re-express eval, string_of_exp, flatten,
    and flatten_sorted. Each definition should be a one-liner. *)
