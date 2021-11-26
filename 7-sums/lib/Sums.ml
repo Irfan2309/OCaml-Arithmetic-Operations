@@ -138,12 +138,30 @@ let rec merge : 'a list -> 'a list -> 'a list = fun xs ys ->
     else
       y :: merge (x :: xs) ys
  
-
+let rec split : 'a list -> ('a list * 'a list) =
+  function
+    | []             -> ([], [])
+    | [x]            -> ([x], [])
+    | (x :: y :: xs) ->
+      let (xs, ys) = split xs in
+        (x :: xs, y :: ys)
+  
+let rec merge_sort : 'a list -> 'a list =
+  function
+    | []  -> []
+    | [x] -> [x]
+    | zs ->
+      let (xs, ys) = split zs in
+        merge (merge_sort xs) (merge_sort ys)
+        
+        
+(* since the hint for merge was given in the question, for sorting the 2 lists, also implement merge_sort (split is also required for this). The code fragments for these are provided in the ocaml exercises sheet.
+ Finally follow the pattern for flatten and simply merge sort the lists using the helper functions *)
 let rec flatten_sorted : exp -> var_list =
   function
   | Zero       -> ["0"]
   | Var x      -> ["" ^ x]
-  | Add (a, b) ->  merge (flatten a @ flatten b)
+  | Add (a, b) -> merge_sort((flatten_sorted a @ flatten_sorted b))
 
 (* compare expressions for equivalence (taking into account
    commutativity) *)
