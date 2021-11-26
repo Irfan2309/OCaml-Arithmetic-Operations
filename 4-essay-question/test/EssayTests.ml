@@ -23,8 +23,20 @@ open OUnit2
 (* unit tests *)
 
 let add_test1 _test_ctxt =
-  assert_equal 9 (add 5 4)
+  assert_equal 9 (add 5 4) 
 
+let mul_int_test1 _test_ctxt =
+  assert_equal 9 (mul_int 3 3) 
+
+let count_test1 _test_ctxt =
+  assert_equal 4 (count [1, 2, 3, 4]) 
+
+let seq_add_test1 _test_ctxt =
+  assert_equal [7; 5; 6] (seq_add [2; 3; 5] [5; 2; 1])
+
+let length_test1 _test_ctxt =
+  assert_equal 4 (length [1, 2, 3, 4]) 
+  
 (* list of unit tests *)
 let unit_tests =
   [ "add_test1" >::add_test1

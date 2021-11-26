@@ -44,6 +44,12 @@ let flatten_sorted_test1 _test_ctxt =
 (* TODO: write unit tests for `compare_exps'` and
    `compare_exps_sorted'` *)
 
+let compare_exps'_test _test_ctxt = 
+  assert_equal (flatten' (Add (Add (Var "a", Var "b"), Add (Var "c", Var "d")))) (flatten' (Add (Var "a", Add (Var "b", Add (Var "c", Var "d")))))
+ 
+ let compare_exps_sorted_test _test_ctxt =
+  assert_equal (flatten_sorted' (Add (Add (Var "a", Var "b"), Add (Var "c", Var "d")))) (flatten_sorted' (Add (Var "a", Add (Var "b", Add (Var "c", Var "d"))))) 
+
 (* list of unit tests *)
 let unit_tests =
     ["string_of_exp_test1"  >:: string_of_exp_test1;
