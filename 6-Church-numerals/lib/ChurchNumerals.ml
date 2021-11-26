@@ -34,4 +34,4 @@ let rec i2c : int -> church_numeral =
    point is 0, this will count the number of times f was applied to x,
    thus yielding the integer that the Church numeral represents. *)
 let c2i : church_numeral -> int =
-  fun c -> c(fun c -> c + 1) 0;;
+   fun c -> c ((+) 1) 0;;
