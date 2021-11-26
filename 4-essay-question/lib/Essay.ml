@@ -41,8 +41,7 @@ let add (x:int) (y:int) : int = x + y
 (* The following function... *)
 
 (*  
-The Ocaml language is a statically typed functional language that can infer the types of variables or functions on the go but it is a good practice to explicitly declare them in the constraint section. 
-
+The Ocaml language is a statical functional programming language that can infer the types of variables or functions on the go. 
 Function type signatures:
 
 The Function type signatures constraints the function's arguments and return types. This is a good feature as it helps programmers to easily identify the behaviour and the properties of a function just from the type signatures. 
@@ -59,9 +58,11 @@ Polymorphism allows the programmers to generalise the arguments and return types
     
     Parmetric Polypmorphism: A type that allows a function to be designed generically so that it can handle values in the same way regardless 
     of type.
+    Ex: 'a -> 'a list -> 'a list
 
     Ad-hoc polymorphism : it refers to the ability to define a function with the same name but with different types. They are different functions that can 
     act in different ways. 
+    Ex: int -> int -> int
 
     The high order count is an example of an high order function that count the number of elements on a list. 
     This function is polymorphic since it can handle any kind of list, either integer or string list 

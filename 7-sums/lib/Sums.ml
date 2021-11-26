@@ -141,9 +141,9 @@ let rec merge : 'a list -> 'a list -> 'a list = fun xs ys ->
 
 let rec flatten_sorted : exp -> var_list =
   function
-  | Zero       -> failwith "not implemented yet"
-  | Var x      -> failwith "not implemented yet"
-  | Add (a, b) -> failwith "not implemented yet"
+  | Zero       -> ["0"]
+  | Var x      -> ["" ^ x]
+  | Add (a, b) ->  merge (flatten a @ flatten b)
 
 (* compare expressions for equivalence (taking into account
    commutativity) *)
@@ -170,7 +170,7 @@ let compare_exps_sorted : exp -> exp -> bool =
 let rec fold : 'a -> (string -> 'a) -> ('a -> 'a -> 'a) -> exp -> 'a =
   fun zero var add ->
   function
-  | Zero       -> ["0"]
+  | Zero       -> failwith "not implemented yet"
   | Var x      -> failwith "not implemented yet"
   | Add (a, b) -> failwith "not implemented yet"
 
