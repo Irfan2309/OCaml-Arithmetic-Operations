@@ -91,7 +91,7 @@ Tuples:
 
  (* OCaml pattern-matching on values (e.g. integers) and structures (e.g. lists).
 
-   Pattern matching is a feature that checks  the argument or against values, conditions or deconstructors.
+   Pattern matching is a method to match variables to a particular pattern.
    Pattern matching is used to perform computations according to the pattern of the expression. 
    We can pattern match numbers and strings with "match" keyword, and it behaves like a case or switch statement 
 
@@ -106,12 +106,14 @@ Tuples:
 
 (* Named and anonymous functions:
 
-   Named functions are just functions that have a name. When a function is named it is stored in a variable and it can be called and applied anywhere in the program.
+   Named functions are just functions that have a name.
+   When a function is named it is stored in a variable and it can be called and applied anywhere in the program.
+   The word "let" is used to assign a function to a variable.
    Example: let fun seq_add : int_seq -> int_seq -> int_seq =
 
    Anonymous functions are functions that don't have a name so that they cannot be assigned to any value. 
    These anonymous functions are used to pass as arguments to another function. 
-   An anonymous function is defined as a lambda expression, using the “fun” keyword to bind the variables from outside the function.
+   The word "fun" creates the anonymous function and then we define the function after the word fun in the format "fun x-> <expression>". 
    Example: fun xs ->
  *)
 
@@ -139,6 +141,6 @@ Tuples:
    Property-based testing:
    Property testing has an incomparable more extensive range than unit testing since the values being tested are randomly assigned by a library as well as the amount of test cases. Additionally to the variable automation, the property based testing library uses bound values to reduce the time to report major programming bugs or logical innacuracies. 
    Property based testing is only possible in functionally programming, due to the strict use of immutable variables and lambda computation.
-
+   
  *)
  
